@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Desktop storefront renders with local assets and passes accessibility scan",
+    "Product search, basket and delivery checkout work end to end",
+    "Customer demo account shows order history and sends an inbox message",
+    "Administrator workspace and every main section render",
+    "Product creation and inventory adjustment persist through the API",
+    "Financial entry form saves an expense",
+    "Desktop workspace mobile layouts stay within 360 and 390 pixel screens",
+    "Mobile customer pages, menu and shop pass accessibility scans"
+  ],
+  "viewport_sizes": [
+    "1440×1000",
+    "390×844",
+    "360×844"
+  ],
+  "runtime_errors": [],
+  "accessibility_standard_tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21aa"
+  ]
+}

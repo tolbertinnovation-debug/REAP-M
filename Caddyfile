@@ -1,0 +1,4 @@
+{$MARKET_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy market:3000
+}
