@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# Paid service and persistent disk. Review Render's displayed price before deploying.
+services:
+  - type: web
+    name: reap-market
+    runtime: node
+    region: frankfurt
+    plan: 0.5c-512mb
+    branch: main
+    numInstances: 1
+    autoDeployTrigger: checksPass
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: reap-market-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "24.21.0"
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DEMO_MODE
+        value: "false"
+      - key: ENABLE_OUTBOUND
+        value: "false"
+      - key: TRUST_PROXY
+        value: "true"
+      - key: DB_PATH
+        value: /var/data/market.sqlite
+      # Resolve the allocated HTTPS address without guessing an available hostname.
+      - key: PUBLIC_ORIGIN
+        fromService:
+          type: web
+          name: reap-market
+          envVarKey: RENDER_EXTERNAL_URL
+      # These values are entered privately in Render during initial setup.
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DELIVERY_FEE_CENTS
+        sync: false
+      - key: DELIVERY_AREA
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false

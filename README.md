@@ -4,6 +4,10 @@ A responsive agriculture storefront and operations workspace for **Restoration o
 
 Built in the `tolbertinnovation-debug/REAP-M` repository. The supplied institutional reference is [reapwestafrica.org](https://www.reapwestafrica.org/). The product name is **REAP Market**; the brief's “RIP” is interpreted as REAP based on that reference.
 
+To launch a live instance, use the [guided Render setup](docs/RENDER.md). It configures a paid web service and a persistent database disk; you enter administrator and business details privately in Render.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/tolbertinnovation-debug/REAP-M)
+
 ## Explore locally
 
 Requires **Node 24.14 or later** and npm.

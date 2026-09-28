@@ -1,5 +1,7 @@
 # Deployment and operations
 
+For managed hosting with a guided setup, follow [Launch on Render](RENDER.md). The repository includes `render.yaml` to configure persistent storage, HTTPS origin, build and health checks. The Docker instructions below are an alternative for a server you manage.
+
 ## Production setup
 
 1. Provision a Linux server with Docker and Compose, persistent disk storage, inbound ports 80/443 and a domain DNS record pointing to the server.
